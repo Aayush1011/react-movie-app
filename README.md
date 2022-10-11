@@ -1,5 +1,5 @@
 # About The App
-This app allows you to login/signup and rate your favorite movies.
+In this app you can search for movies to find out its plot, cast, etc as well as login/signup to rate the movies.
 
 
 **************************************************************************************************

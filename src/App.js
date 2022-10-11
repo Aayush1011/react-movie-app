@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+// Routing
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// Components
+import Header from './components/Header';
+import { Home } from './components/Home';
+import Movie from './components/Movie';
+import NotFound from './components/NotFound';
+import Login from './components/Login';
+import Signup from './components/Signup';
+import MyRatings from './components/MyRatings';
+// Styles
+import { GlobalStyle } from './GlobalStyle';
+// Hooks
+import useAuthListener from './hooks/useAuthListener';
 
-function App() {
+const App = () => {
+  const { user } = useAuthListener();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header user={user} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        <Route path='/myratings' element={<MyRatings/>} />
+        <Route path="/:movieId" element={<Movie user={user} />} />
+        <Route path="/*" element={<NotFound />} />
+      </Routes>
+      <GlobalStyle />
+    </Router>
   );
 }
 

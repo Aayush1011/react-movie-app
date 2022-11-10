@@ -20,13 +20,13 @@ const Signup = () => {
 
   const handleSubmit = async () => {
     setError(false);
-    if (password !== confirmPassword){
+    if (password !== confirmPassword) {
       setError(true);
       return;
-    } 
+    }
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      updateProfile(auth.currentUser, { displayName: username });
+      await updateProfile(auth.currentUser, { displayName: username });
       setRatingUser({ email, ratings: [] });
       navigate("/");
     } catch (error) {

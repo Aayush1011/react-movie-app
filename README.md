@@ -1,3 +1,10 @@
+# About The App
+In this app you can search for movies to find out its plot, cast, etc as well as login/signup to rate the movies.
+
+
+**************************************************************************************************
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

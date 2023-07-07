@@ -1,6 +1,6 @@
 # About The App
 In this app you can search for movies to find out its plot, cast, etc as well as login/signup to rate the movies.
-
+Technologies used: ReactJs, Styled-Components, TMDB(The Movie Database) API, Firebase authentication.
 
 **************************************************************************************************
 
